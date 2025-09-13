@@ -1,11 +1,9 @@
 import express from "express";
-import { registerUser, loginUser, getProfile } from "../controllers/userController.js";
-import { protect } from "../middleware/authMiddleware.js";
+import { registerUser, loginUser } from "../controllers/userController.js";
 
 const router = express.Router();
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.get("/profile", protect, getProfile); // secure route
 
-export default router;
+export default router;   // ✅ make it default
